@@ -1,0 +1,31 @@
+/* TODO LIST */
+.todo-wrapper {
+  height: 100%;
+}
+.todo-wrapper .todos-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.todo-wrapper .todos-title-wrapper .todos-title {
+}
+.todo-wrapper .todos-title-wrapper .todos-title h1 {
+  font-size: 2.2em;
+}
+.todo-wrapper .todos-title-wrapper .todos-title h1 span {
+  font-size: 0.9em;
+}
+.todo-wrapper .todos-title-wrapper .todos-title h4 {
+}
+.todo-wrapper .todos-title-wrapper .btn-todo-add {
+  background-color: #a6b1e1;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #fff;
+  transition: 0.4s;
+}
+.todo-wrapper .todos-title-wrapper .btn-todo-add:hover {
+  background-color: #5973e3;
+}

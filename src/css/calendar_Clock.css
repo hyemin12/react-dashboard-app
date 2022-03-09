@@ -1,0 +1,27 @@
+/* CALENDAR */
+.calendar-wrapper {
+  height: 275px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.calendar-wrapper .DayPicker-Month {
+  width: 300px;
+  margin: 0;
+  margin-top: 0;
+}
+.calendar-wrapper .DayPicker-NavButton {
+  top: 0;
+  right: 0.5em;
+}
+/* 
+ */
+/* CLOCK */
+.clock-wrapper {
+  padding: 20px;
+  background-color: #eaeaea;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.clock-wrapper p {
+  font-size: 32px;
+}
