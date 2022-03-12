@@ -1,0 +1,51 @@
+/* MUSIC PLAYER */
+.music-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 280px;
+  margin-bottom: 20px;
+}
+.music-wrapper .album-img {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.music-wrapper .album-img img {
+  width: 100%;
+  object-fit: cover;
+}
+.name-wrapper {
+  padding: 15px 0;
+}
+.music-wrapper .music-info-wrapper {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.music-wrapper .music-info-wrapper .song-name {
+  font-size: 16px;
+}
+.music-wrapper .music-info-wrapper .artist-name {
+  font-size: 12px;
+}
+.music-wrapper .music-info-wrapper .music-btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.music-wrapper .music-info-wrapper .music-btn-group .btn-play {
+  font-size: 24px;
+}
+/* .music-wrapper .music-info-wrapper .music-btn-group div {
+  padding: 6px 6px 2px 6px;
+} */

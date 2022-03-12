@@ -3,7 +3,7 @@ import PortfolioList from "./components/PortfolioList";
 import Calendar from "./components/Calendar";
 import TodoList from "./components/TodoList";
 import Covid from "./components/Covid";
-import Music from "./components/Music";
+import MusicPlayer from "./components/MusicPlayer";
 import Clock from "./components/Clock";
 import Weather from "./components/Weather";
 
@@ -23,7 +23,7 @@ function App() {
         </div>
         <div className="column">
           <Covid />
-          <Music />
+          <MusicPlayer />
           <Clock />
           <Weather />
         </div>

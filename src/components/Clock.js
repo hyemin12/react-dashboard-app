@@ -1,22 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../css/calendar_Clock.css";
+import { useDispatch, useSelector } from "react-redux";
 
 function Clock() {
-  const [time, setTime] = useState(new Date());
+  let state = useSelector((state) => state);
+  let dispatch = useDispatch();
+
   useEffect(() => {
     const timeId = setInterval(() => {
-      setTime(new Date());
-    }, 30000);
+      dispatch({ type: "시간가져오기" });
+    }, 1000);
     return () => clearInterval(timeId);
   }, []);
-  let hours = time.getHours();
-  let amPm = hours < 12 ? "AM" : "PM";
-  const minutes = String(time.getMinutes()).padStart(2, "0");
-  const getTime = hours + ":" + minutes + " " + amPm;
-  console.log(getTime);
+
+  const emojis = [
+    "😁",
+    "😐",
+    "😣",
+    "😊",
+    "🤭",
+    "😇",
+    "🥳",
+    "😆",
+    "😋",
+    "😎",
+    "🥰",
+  ];
+  function randomEmoji() {
+    return parseInt(Math.random() * emojis.length);
+  }
   return (
     <section className="clock-wrapper">
-      <p>{getTime}</p>
+      <p>{state}</p>
+      <span>{emojis[randomEmoji()]}</span>
     </section>
   );
 }
