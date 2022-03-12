@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   height: 280px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .music-wrapper .album-img {
   width: 100%;
@@ -46,6 +46,3 @@
 .music-wrapper .music-info-wrapper .music-btn-group .btn-play {
   font-size: 24px;
 }
-/* .music-wrapper .music-info-wrapper .music-btn-group div {
-  padding: 6px 6px 2px 6px;
-} */

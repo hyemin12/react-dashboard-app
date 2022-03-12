@@ -39,15 +39,22 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding: 0 30px; */
+  width: 100%;
   height: 100vh;
 }
 .App .board {
-  display: flex;
+  width: 1320px;
   background-color: #fff;
   border-radius: 30px;
-  padding: 40px 50px;
-  gap: 50px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  margin: 30px;
+}
+.App .board .board-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px;
+  gap: 30px;
 }
 
 .App .board .column:first-child {
@@ -59,18 +66,16 @@ button {
 .App .board .column:last-child {
   width: 280px;
 }
-
+.App .board .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 280px;
+  height: 175px;
+  margin-bottom: 10px;
+}
 .portfolio-wrapper {
   height: 390px;
   background-color: #a6b1e1;
   margin-bottom: 20px;
-}
-.covid-wrapper {
-  height: 100px;
-  background-color: #a6b1e1;
-  margin-bottom: 20px;
-}
-.weather-wrapper {
-  height: 260px;
-  background-color: #a6b1e1;
 }

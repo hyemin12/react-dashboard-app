@@ -13,6 +13,13 @@
   top: 0;
   right: 0.5em;
 }
+.DayPicker-Day--today {
+  width: 5px;
+  height: 5px;
+  background-color: #a6b1e7;
+  border-radius: 50%;
+  color: #fff !important;
+}
 /* 
  */
 /* CLOCK */
@@ -21,8 +28,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #eaeaea;
-  border-radius: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 .clock-wrapper p {

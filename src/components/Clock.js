@@ -9,7 +9,7 @@ function Clock() {
   useEffect(() => {
     const timeId = setInterval(() => {
       dispatch({ type: "시간가져오기" });
-    }, 1000);
+    }, 30000);
     return () => clearInterval(timeId);
   }, []);
 

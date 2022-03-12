@@ -10,7 +10,6 @@ function timeReducer(state = clock, action) {
     const amPm = hours < 12 ? "AM" : "PM";
     const minutes = String(state.getMinutes()).padStart(2, "0");
     state = `${hours} : ${minutes} ${amPm}`;
-    console.log(state);
     return state;
   } else {
     const hours = state.getHours();

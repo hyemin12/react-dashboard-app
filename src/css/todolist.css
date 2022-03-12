@@ -29,3 +29,27 @@
 .todo-wrapper .todos-title-wrapper .btn-todo-add:hover {
   background-color: #5973e3;
 }
+
+/* TODO ITEM */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.todo-item .todo-check {
+}
+.todo-item .todo-text {
+  display: flex;
+  flex-grow: 1;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+.todo-item .todo-text.checked {
+  background-color: #a6b1e1;
+}
+.todo-item .todo-text:focus {
+  outline: none;
+}
