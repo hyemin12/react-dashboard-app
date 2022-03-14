@@ -29,9 +29,9 @@ function App() {
               <Covid />
               <Weather />
             </div>
-            <Clock />
-            <MusicPlayer />
+            {/* <MusicPlayer /> */}
             <MusicPlayer2 />
+            <Clock />
           </div>
         </div>
       </div>

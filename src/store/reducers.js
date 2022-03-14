@@ -1,9 +1,15 @@
 // import React, {useState} from 'react'
 import { createStore, combineReducers } from "redux";
 
-let clock = new Date();
+const initState = {
+  clock: new Date(),
+  todos: [
+    { id: 0, text: "투두리스트작성", date: " 3월 13일", isChecked: false },
+    { id: 1, text: "투두리스트작성", date: " 3월 13일", isChecked: true },
+  ],
+};
 
-function timeReducer(state = clock, action) {
+function timeReducer(state = initState.clock, action) {
   if (action.type === "시간가져오기") {
     state = new Date();
     const hours = state.getHours();
@@ -20,5 +26,33 @@ function timeReducer(state = clock, action) {
   }
 }
 
-const store = createStore(timeReducer);
+function todoReducer(state = initState.todos, { type, payload }) {
+  switch (type) {
+    case "ADD_TODO":
+      return {
+        ...state,
+        todos: state.todos.concat({
+          id: payload.id,
+          text: payload.text,
+          date: payload.date,
+          isChecked: false,
+        }),
+      };
+    case "REMOVE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== payload.id),
+      };
+    case "EDIT_TODO":
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === payload.id ? { ...todo, text: payload.text } : todo
+        ),
+      };
+    default:
+      return state;
+  }
+}
+const store = createStore(combineReducers({ timeReducer, todoReducer }));
 export default store;

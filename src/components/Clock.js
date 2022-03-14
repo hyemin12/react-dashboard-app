@@ -3,7 +3,7 @@ import "../css/calendar_Clock.css";
 import { useDispatch, useSelector } from "react-redux";
 
 function Clock() {
-  let state = useSelector((state) => state);
+  let state = useSelector((state) => state.timeReducer);
   let dispatch = useDispatch();
 
   useEffect(() => {

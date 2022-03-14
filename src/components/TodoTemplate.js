@@ -1,8 +1,13 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import TodoItem from "./TodoItem";
+import TodoCreate from "./TodoCreate";
 import { year, month, date } from "../status/moment.state";
-import TodoList from "./TodoList";
 import "../css/todolist.css";
 
 function TodoTemplate() {
+  let todos = useSelector((state) => state.todoReducer);
+  const [todoAdd, setTodoAdd] = useState(false);
   return (
     <section className="todo-wrapper">
       <div className="todos-title-wrapper">
@@ -15,9 +20,19 @@ function TodoTemplate() {
           </h1>
           <h4>가나다라마바사</h4>
         </div>
-        <button className="btn btn-todo-add">Add task</button>
+        <button
+          className="btn btn-todo-add"
+          onClick={() => {
+            setTodoAdd(!todoAdd);
+          }}
+        >
+          Add task
+        </button>
       </div>
-      <TodoList />
+      {todoAdd ? <TodoCreate /> : null}
+      {todos.length !== 0
+        ? todos.map((todo) => <TodoItem todo={todo} key={todo.id} />)
+        : null}
     </section>
   );
 }
