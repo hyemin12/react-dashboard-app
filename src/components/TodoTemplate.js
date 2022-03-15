@@ -29,8 +29,8 @@ function TodoTemplate() {
           Add task
         </button>
       </div>
-      {todoAdd ? <TodoCreate /> : null}
-      {todos.length !== 0
+      {todoAdd ? <TodoCreate todoAdd={todoAdd} /> : null}
+      {todos && todos.length !== 0
         ? todos.map((todo) => <TodoItem todo={todo} key={todo.id} />)
         : null}
     </section>

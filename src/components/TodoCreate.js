@@ -1,29 +1,48 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { FaPen } from "react-icons/fa";
-import { year, month, date } from "../status/moment.state.js";
+import { useDispatch } from "react-redux";
 
-function TodoCreate() {
-  const [value, setValue] = useState();
+import { FaPen } from "react-icons/fa";
+import { month, date } from "../status/moment.state.js";
+
+function TodoCreate(props) {
+  const [value, setValue] = useState("");
   const dispatch = useDispatch();
+  function handleOnchange(event) {
+    let value = event.target.value;
+    setValue(value);
+  }
   function handleEnter(event) {
     event.preventDefault();
-    addTodo();
+    if (event.key === "Enter") {
+      addTodo();
+    }
   }
   function addTodo() {
-    dispatch({
-      type: "EDIT_TODO",
-      payload: {
-        id: 1,
-        text: value,
-        date: `${year}년 ${month}월 ${date}일`,
-      },
-    });
+    if (value === "") {
+      alert("내용을 입력해주세요!");
+    } else {
+      dispatch({
+        type: "ADD_TODO",
+        payload: {
+          id: Date.now(),
+          text: value,
+          date: `${month}월 ${date}일`,
+          isChecked: false,
+        },
+      });
+      setValue("");
+    }
   }
   return (
     <>
       <div className="todo-create">
-        <input type="text" onKeyPress={handleEnter} />
+        <input
+          required
+          type="text"
+          value={value}
+          onKeyPress={handleEnter}
+          onChange={handleOnchange}
+        />
         <button onClick={addTodo}>
           <FaPen />
         </button>

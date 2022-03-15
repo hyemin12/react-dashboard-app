@@ -1,0 +1,53 @@
+/* ABOUT ME */
+.portfolio-wrapper {
+  margin-bottom: 30px;
+}
+.portfolio-wrapper .protfolio-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.portfolio-wrapper ul {
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.portfolio-wrapper ul li {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  /* border: 1px solid #222; */
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.portfolio-wrapper ul li .content-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.portfolio-wrapper ul li .content-text {
+  margin-left: 10px;
+}
+.portfolio-wrapper ul li .content-text p {
+  margin-bottom: 10px;
+}
+.portfolio-wrapper ul li .content-text .link-group a {
+  background-color: #eff1ff;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: #a6b1e7;
+  font-size: 12px;
+}
+.portfolio-wrapper ul li .content-text .link-group a:hover {
+  background-color: #a6b1e7;
+  color: #fff;
+}
+.portfolio-wrapper ul li .btn-more {
+  margin-left: 20px;
+}
+.portfolio-wrapper ul li .btn-more .icon-more {
+  padding: 5px;
+  background-color: #a6b1e7;
+  color: #fff;
+}

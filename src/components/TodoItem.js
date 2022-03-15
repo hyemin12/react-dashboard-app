@@ -1,30 +1,73 @@
-import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { FaPen, FaTrash } from "react-icons/fa";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { FaPen, FaTrash, FaCheck, FaCheckCircle } from "react-icons/fa";
 
 function TodoItem(props) {
-  let id = useRef();
   const dispatch = useDispatch();
+  const [readOnly, setReadOnly] = useState(true);
+  const [isEditMode, setIsEditMode] = useState(false);
 
-  function removeTodo() {
-    dispatch({ type: "REMOVE_TODO" });
+  function isChecked() {
+    dispatch({
+      type: "checked",
+      payload: { id: props.todo.id, isChecked: !props.todo.isChecked },
+    });
   }
-  function editTodo() {}
+  function removeTodo() {
+    dispatch({ type: "REMOVE_TODO", payload: { id: props.todo.id } });
+  }
+  function editTodo() {
+    setIsEditMode(!isEditMode);
+    setReadOnly(true);
+    dispatch({
+      type: "EDIT_TODO",
+      payload: { id: props.todo.id, text: props.todo.value },
+    });
+  }
   return (
     <>
       <div className="todo-item">
-        <input type="checkbox" id="todo-check" />
-        <label></label>
+        <button onClick={isChecked}>
+          {!props.todo.isChecked ? (
+            <FaCheck className="checkbox" />
+          ) : (
+            <FaCheck className="checkbox checked" />
+          )}
+        </button>
+
         <div className="todo-content">
-          <div className="todo-text">{props.todo.text}</div>
-          <div className="btn-group">
-            <button onClick={editTodo}>
-              <FaPen />
-            </button>
-            <button onClick={removeTodo}>
-              <FaTrash />
-            </button>
-          </div>
+          {props.todo.isChecked ? (
+            <input
+              type="text"
+              readOnly={readOnly}
+              value={props.todo.text}
+              className="todo-text"
+            />
+          ) : (
+            <input
+              type="text"
+              readOnly={readOnly}
+              value={props.todo.text}
+              className="todo-text checked"
+            />
+          )}
+          {isEditMode ? (
+            <button onClick={editTodo}>수정완료</button>
+          ) : (
+            <div className="btn-group">
+              <button
+                onClick={() => {
+                  setIsEditMode(!isEditMode);
+                  setReadOnly(false);
+                }}
+              >
+                <FaPen />
+              </button>
+              <button onClick={removeTodo}>
+                <FaTrash />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>

@@ -8,6 +8,9 @@ body {
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   /* background-color: #8785a2; */
 }
+input {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
 h1,
 h2,
 h3,
@@ -72,10 +75,5 @@ button {
   gap: 10px;
   width: 280px;
   height: 175px;
-  margin-bottom: 20px;
-}
-.portfolio-wrapper {
-  height: 390px;
-  background-color: #a6b1e1;
   margin-bottom: 20px;
 }

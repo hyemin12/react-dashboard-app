@@ -4,8 +4,13 @@ import { createStore, combineReducers } from "redux";
 const initState = {
   clock: new Date(),
   todos: [
-    { id: 0, text: "투두리스트작성", date: " 3월 13일", isChecked: false },
-    { id: 1, text: "투두리스트작성", date: " 3월 13일", isChecked: true },
+    {
+      id: 0,
+      text: "wordle 기능 추가하기",
+      date: " 3월 13일",
+      isChecked: false,
+    },
+    { id: 1, text: "투두리스트 기능", date: " 3월 14일", isChecked: false },
   ],
 };
 
@@ -17,39 +22,41 @@ function timeReducer(state = initState.clock, action) {
     const minutes = String(state.getMinutes()).padStart(2, "0");
     state = `${hours} : ${minutes} ${amPm}`;
     return state;
-  } else {
+  } else if (initState.clock === state) {
     const hours = state.getHours();
     const amPm = hours < 12 ? "AM" : "PM";
     const minutes = String(state.getMinutes()).padStart(2, "0");
     state = `${hours} : ${minutes} ${amPm}`;
     return state;
+  } else {
+    return state;
   }
 }
 
 function todoReducer(state = initState.todos, { type, payload }) {
+  localStorage.setItem("todos", JSON.stringify(state));
   switch (type) {
     case "ADD_TODO":
-      return {
-        ...state,
-        todos: state.todos.concat({
-          id: payload.id,
-          text: payload.text,
-          date: payload.date,
-          isChecked: false,
-        }),
-      };
+      const addTodo = state.concat(payload);
+      localStorage.setItem("todos", JSON.stringify(addTodo));
+      return addTodo;
     case "REMOVE_TODO":
-      return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.id !== payload.id),
-      };
+      const newTodo = state.filter((todo) => todo.id !== payload.id);
+      localStorage.setItem("todos", JSON.stringify(newTodo));
+      return newTodo;
     case "EDIT_TODO":
-      return {
-        ...state,
-        todos: state.todos.map((todo) =>
-          todo.id === payload.id ? { ...todo, text: payload.text } : todo
-        ),
-      };
+      const editTodo = state.map((todo) =>
+        todo.id === payload.id ? { ...todo, text: payload.text } : todo
+      );
+      localStorage.setItem("todos", JSON.stringify(editTodo));
+      return editTodo;
+    case "checked":
+      const checked = state.map((todo) =>
+        todo.id === payload.id
+          ? { ...todo, isChecked: payload.isChecked }
+          : todo
+      );
+      return checked;
     default:
       return state;
   }

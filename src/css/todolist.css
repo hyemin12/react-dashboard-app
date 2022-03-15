@@ -1,4 +1,4 @@
-/* TODO LIST */
+/* TODO TEMPLATE */
 .todo-wrapper {
   height: 100%;
 }
@@ -6,9 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-}
-.todo-wrapper .todos-title-wrapper .todos-title {
+  margin-bottom: 60px;
 }
 .todo-wrapper .todos-title-wrapper .todos-title h1 {
   font-size: 2.2em;
@@ -16,8 +14,7 @@
 .todo-wrapper .todos-title-wrapper .todos-title h1 span {
   font-size: 0.9em;
 }
-.todo-wrapper .todos-title-wrapper .todos-title h4 {
-}
+
 .todo-wrapper .todos-title-wrapper .btn-todo-add {
   background-color: #a6b1e1;
   padding: 10px 20px;
@@ -37,22 +34,14 @@
   gap: 10px;
   margin-bottom: 15px;
 }
-.todo-item input {
-  display: none;
+.checkbox {
+  padding: 5px;
+  color: #a6b1e1;
 }
-.todo-item label {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ccc;
+.checkbox.checked {
   border-radius: 50%;
-}
-.todo-item:checked + label::after {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
+  background-color: #a6b1e1;
+  color: #fff;
 }
 .todo-content {
   display: flex;
@@ -65,12 +54,11 @@
 }
 .todo-item .todo-content .todo-text {
   display: flex;
-
+  background-color: transparent;
+  border: none;
   font-size: 18px;
 }
-.todo-item .todo-content .todo-text.checked {
-  background-color: #a6b1e1;
-}
+
 .todo-item .todo-content .todo-text:focus {
   outline: none;
 }
@@ -85,7 +73,6 @@
 .todo-create {
   display: flex;
   margin-bottom: 25px;
-  /* background-color: #ccc; */
   border-radius: 15px;
   border: 3px solid #a6b1e7;
 }
