@@ -1,7 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import Portfolio from "./routes/Portfolio";
-import { Route, Routes } from "react-router-dom";
-import "./css/app.css";
+import PortfolioModal from "./components/portfolio/PortfolioModal";
+import "./app.css";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/portfolio" element={<Portfolio />}></Route>
+        <Route path="/portfolio/:id" element={<PortfolioModal />}></Route>
       </Routes>
     </div>
   );

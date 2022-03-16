@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { FaPen, FaTrash, FaCheck, FaCheckCircle } from "react-icons/fa";
+import { FaPen, FaTrash, FaCheck } from "react-icons/fa";
 
 function TodoItem(props) {
   const dispatch = useDispatch();

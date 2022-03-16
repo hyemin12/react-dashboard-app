@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 import TodoCreate from "./TodoCreate";
-import { year, month, date } from "../status/moment.state";
-import "../css/todolist.css";
+import { year, month, date } from "../../store/moment.state";
+import "./todolist.css";
 
 function TodoTemplate() {
   let todos = useSelector((state) => state.todoReducer);

@@ -1,12 +1,12 @@
-import User from "../components/User";
-import PortfolioList from "../components/PortfolioList";
-import Calendar from "../components/Calendar";
-import TodoTemplate from "../components/TodoTemplate";
-
-import Covid from "../components/Covid";
-import MusicPlayer2 from "../components/MusicPlayer2";
-import Weather from "../components/Weather";
-import Clock from "../components/Clock";
+import User from "../components/user/User";
+import HomePortfolio from "../components/portfolio/Home.Portfolio";
+import Calendar from "../components/calendar/Calendar";
+import TodoTemplate from "../components/todo/TodoTemplate";
+import Covid from "../components/covid/Covid";
+import MusicPlayer2 from "../components/musicplayer/MusicPlayer2";
+import Weather from "../components/weather/Weather";
+import Clock from "../components/clock/Clock";
+import Quote from "../components/quote/Quote";
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
       <div className="board-wrapper">
         <div className="column">
           <User />
-          <PortfolioList />
+          <HomePortfolio />
           <Calendar />
         </div>
         <div className="column">
@@ -27,6 +27,7 @@ function Home() {
           </div>
           <MusicPlayer2 />
           <Clock />
+          <Quote />
         </div>
       </div>
     </div>

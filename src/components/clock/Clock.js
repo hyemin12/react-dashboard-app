@@ -1,15 +1,14 @@
 import { useEffect } from "react";
-import "../css/calendar_Clock.css";
 import { useDispatch, useSelector } from "react-redux";
+import "./clock.css";
 
 function Clock() {
   let state = useSelector((state) => state.timeReducer);
   let dispatch = useDispatch();
-
   useEffect(() => {
     const timeId = setInterval(() => {
       dispatch({ type: "시간가져오기" });
-    }, 30000);
+    }, 20000);
     return () => clearInterval(timeId);
   }, []);
 

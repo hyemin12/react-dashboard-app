@@ -1,4 +1,4 @@
-import "../css/user.css";
+import "./user.css";
 function User() {
   return (
     <section className="user-wrapper">

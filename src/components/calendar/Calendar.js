@@ -1,6 +1,6 @@
 import DayPicker from "react-day-picker";
-import "../css/calendar_Clock.css";
 import "react-day-picker/lib/style.css";
+import "./calendar.css";
 
 function Calendar() {
   return (

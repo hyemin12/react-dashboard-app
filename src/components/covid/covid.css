@@ -1,5 +1,6 @@
 /* COVID */
 .covid-wrapper {
+  height: 135px;
   padding: 20px;
   background-color: #f7f7f7;
   border-radius: 10px;
@@ -17,4 +18,16 @@
   border-radius: 2px;
   position: absolute;
   top: 5px;
+}
+.covid-wrapper .covid-result {
+  padding-top: 30px;
+}
+.covid-wrapper .covid-result .result-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.covid-wrapper .covid-result .result-title span {
+  cursor: pointer;
 }

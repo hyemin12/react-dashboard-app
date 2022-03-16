@@ -7,8 +7,8 @@ import {
   FaVolumeDown,
   FaPause,
 } from "react-icons/fa";
-import song from "../playlist/NCT_DREAM_무대로.mp3";
-import "../css/musicplayer2.css";
+import song from "./playlist/NCT_DREAM_무대로.mp3";
+import "./musicplayer2.css";
 function Music() {
   const [isPlaying, setisPlaying] = useState(false);
   const audio = new Audio(song);

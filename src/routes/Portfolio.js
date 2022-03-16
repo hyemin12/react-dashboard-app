@@ -1,37 +1,67 @@
-import User from "../components/User";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import {
+  FaAngleLeft,
+  FaReact,
+  FaJsSquare,
+  FaPlug,
+  FaAlignLeft,
+} from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+// components
+import RoutePortfolioItem from "../components/portfolio/Route.PortfolioItem";
+//css
+import "../components/portfolio/routePortfolio.css";
+
 function Portfolio() {
+  const state = useSelector((state) => state.portfolioReducer);
+  const dispatch = useDispatch();
+
+  function handleFilter(event) {
+    const name = event.target.innerText;
+    if (name) {
+      dispatch({ type: name });
+    }
+  }
   return (
-    <div className="board">
+    <div className="board portfolio">
       <div className="board-wrapper">
         <div className="column">
-          <User />
-          <ul className="nav-group">
-            <li>
-              <Link to="/">
-                <FaHome />
-                HOME
-              </Link>
+          <div className="icon-home">
+            <Link to="/">
+              <FaAngleLeft />
+              <span>HOME</span>
+            </Link>
+          </div>
+          <ul className="filter">
+            <li className="icon" onClick={handleFilter}>
+              <FaAlignLeft />
+              <span>All</span>
+            </li>
+            <li className="icon" onClick={handleFilter}>
+              <FaReact />
+              <span>React</span>
+            </li>
+            <li className="icon" onClick={handleFilter}>
+              <FaJsSquare />
+              <span>Vanilla JS</span>
+            </li>
+            <li className="icon" onClick={handleFilter}>
+              <FaPlug />
+              <span>jQuery</span>
             </li>
           </ul>
         </div>
         <div className="column">
-          <div className="filter">
-            <ul>
-              <li>React</li>
-              <li>Vanilla JS</li>
-              <li>jQuery</li>
-            </ul>
-          </div>
-          <div className="portfolio-list">
-            <ul>
-              <li className="portfolio-item">아이템</li>
-              <li className="portfolio-item">아이템</li>
-              <li className="portfolio-item">아이템</li>
-              <li className="portfolio-item">아이템</li>
-            </ul>
-          </div>
+          <ul className="portfolio-list">
+            {state &&
+              state.map((item, i) => {
+                return (
+                  <>
+                    <RoutePortfolioItem item={item} key={i} />
+                  </>
+                );
+              })}
+          </ul>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "../css/weather.css";
+import "./weather.css";
 
 const KEY2 = process.env.REACT_APP_WEATHER_API_KEY;
 
@@ -13,7 +13,6 @@ function Weather() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${KEY2}&units=metric`
     );
     setWeathers(response.data);
-    console.log(response.data);
   };
   function handleError() {
     alert("위치를 찾을 수 없습니다.");
