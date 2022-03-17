@@ -20,3 +20,16 @@
   border-radius: 50%;
   color: #fff !important;
 }
+.DayPicker-Day {
+  position: relative;
+}
+.DayPicker-Day--highlighted::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: violet;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

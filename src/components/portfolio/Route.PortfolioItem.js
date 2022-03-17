@@ -4,7 +4,7 @@ function RoutePortfolioItem(props) {
   return (
     <>
       <li className="portfolio-item">
-        <img src={`./img/${item.img}.png`} alt={item.title} />
+        <img src={`./img/portfolio/${item.img}.png`} alt={item.title} />
         <div className="item-hover">
           <h4>{item.title}</h4>
           <div className="link-group">

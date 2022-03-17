@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from "redux";
 import { portfolioData } from "../store/portfolio.state.js";
+import { planDate } from "../store/calendar.state";
 const initState = {
   newDate: new Date(),
   clock: function () {
@@ -20,6 +21,7 @@ const initState = {
     { id: 1, text: "투두리스트 기능", date: " 3월 14일", isChecked: false },
   ],
   portfolioData,
+  planDate,
 };
 
 function timeReducer(state = initState.newDate, action) {
@@ -36,6 +38,7 @@ function timeReducer(state = initState.newDate, action) {
 
 function todoReducer(state = initState.todos, { type, payload }) {
   localStorage.setItem("todos", JSON.stringify(state));
+  state = JSON.parse(localStorage.getItem("todos"));
   switch (type) {
     case "ADD_TODO":
       const addTodo = state.concat(payload);
@@ -49,7 +52,6 @@ function todoReducer(state = initState.todos, { type, payload }) {
       const editTodo = state.map((todo) =>
         todo.id === payload.id ? { ...todo, text: payload.text } : todo
       );
-      localStorage.setItem("todos", JSON.stringify(editTodo));
       return editTodo;
     case "checked":
       const checked = state.map((todo) =>
@@ -81,8 +83,16 @@ function portfolioReducer(state = initState.portfolioData, { type, payload }) {
       return state;
   }
 }
+function planReducer(state = initState.planDate, { type, payload }) {
+  switch (type) {
+    case "add":
+      return state;
+    default:
+      return state;
+  }
+}
 
 const store = createStore(
-  combineReducers({ timeReducer, todoReducer, portfolioReducer })
+  combineReducers({ timeReducer, todoReducer, portfolioReducer, planReducer })
 );
 export default store;

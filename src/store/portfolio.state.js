@@ -29,6 +29,15 @@ export const portfolioData = [
     site: "https://hyemin12.github.io/vanillaJS-chrome-app/",
   },
   {
+    filter: "ect",
+    id: "ect",
+    img: "challengeJS",
+    title: "바닐라JS challenge",
+    describtion: "",
+    code: "https://github.com/hyemin12/vanillaJS-challenge/",
+    site: "https://hyemin12.github.io/vanillaJS-challenge/",
+  },
+  {
     filter: "vanillaJS",
     id: "wordle",
     img: "wordleJS",

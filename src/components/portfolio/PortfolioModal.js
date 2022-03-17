@@ -17,7 +17,10 @@ function PortfolioModal() {
                 <FaAngleLeft />
                 My Portfolio
               </h1>
-              <img src={`../img/${item.img}.png`} alt={item.title}></img>
+              <img
+                src={`../img/portfolio/${item.img}.png`}
+                alt={item.title}
+              ></img>
             </div>
             <div className="column text-column">
               <h1>{item.title}</h1>

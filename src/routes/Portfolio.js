@@ -5,6 +5,7 @@ import {
   FaJsSquare,
   FaPlug,
   FaAlignLeft,
+  FaChalkboard,
 } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 // components
@@ -48,6 +49,10 @@ function Portfolio() {
             <li className="icon" onClick={handleFilter}>
               <FaPlug />
               <span>jQuery</span>
+            </li>
+            <li className="icon" onClick={handleFilter}>
+              <FaChalkboard />
+              <span>ect</span>
             </li>
           </ul>
         </div>

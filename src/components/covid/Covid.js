@@ -28,7 +28,9 @@ function Covid() {
             </span>
           </div>
           <span>신규발생</span>
-          <span>{covidInfo.gyeonggi.newCase}</span>
+          <span>
+            {covidInfo && covidInfo ? `${covidInfo.gyeonggi.newCase}` : null}
+          </span>
         </div>
       </section>
     </div>

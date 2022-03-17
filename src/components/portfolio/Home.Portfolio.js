@@ -11,7 +11,10 @@ function HomePortfolio() {
         <ul>
           <li>
             <div className="content-img">
-              <img src={`./img/${portfolioData[1].img}.png`} alt="moment" />
+              <img
+                src={`./img/portfolio/${portfolioData[1].img}.png`}
+                alt="moment"
+              />
             </div>
             <div className="content-text">
               <p>React 영화 검색사이트</p>
@@ -35,7 +38,10 @@ function HomePortfolio() {
           </li>
           <li>
             <div className="content-img">
-              <img src={`./img/${portfolioData[2].img}.png`} alt="moment" />
+              <img
+                src={`./img/portfolio/${portfolioData[2].img}.png`}
+                alt="moment"
+              />
             </div>
             <div className="content-text">
               <p>바닐라JS moment app</p>
