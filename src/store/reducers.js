@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import { portfolioData } from "../store/portfolio.state.js";
-import { planDate } from "../store/calendar.state";
+import { planData } from "../store/calendar.state";
+import { playlistData } from "../store/playlist.state";
 const initState = {
   newDate: new Date(),
   clock: function () {
@@ -8,7 +9,7 @@ const initState = {
     const h = state.getHours();
     const ampm = state < 12 ? "AM" : "PM";
     const minutes = String(state.getMinutes()).padStart(2, "0");
-    const today = `${h > 13 ? `${h - 12}` : `${h}`}: ${minutes} ${ampm}`;
+    const today = `${h > 13 ? `${h - 12}` : `${h}`} : ${minutes} ${ampm}`;
     return today;
   },
   todos: [
@@ -21,7 +22,8 @@ const initState = {
     { id: 1, text: "투두리스트 기능", date: " 3월 14일", isChecked: false },
   ],
   portfolioData,
-  planDate,
+  planData,
+  playlistData,
 };
 
 function timeReducer(state = initState.newDate, action) {
@@ -83,16 +85,31 @@ function portfolioReducer(state = initState.portfolioData, { type, payload }) {
       return state;
   }
 }
-function planReducer(state = initState.planDate, { type, payload }) {
+function planReducer(state = initState.planData, { type, payload }) {
   switch (type) {
     case "add":
-      return state;
+      let index = payload.index;
+      console.log(payload.index);
+      const prev = [...state];
+      if (index < state.length || index > 0) {
+        index--;
+      } else if (index === state.length - 1) {
+        index = 0;
+      }
+      console.log(prev);
+      console.log(prev[index]);
+      return index;
+
     default:
       return state;
   }
 }
-
 const store = createStore(
-  combineReducers({ timeReducer, todoReducer, portfolioReducer, planReducer })
+  combineReducers({
+    timeReducer,
+    todoReducer,
+    portfolioReducer,
+    planReducer,
+  })
 );
 export default store;

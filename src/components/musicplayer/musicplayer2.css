@@ -12,6 +12,7 @@
 .music-wrapper2 .music-info-wrapper {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 .music-wrapper2 .album-img img {
   width: 70px;
@@ -34,38 +35,44 @@
 .music-wrapper2 .name-wrapper2 p {
   font-size: 14px;
 }
-.music-wrapper2 .song {
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 0;
-}
-.music-wrapper2 .song::before {
-  content: "";
+
+/* AudioPlayer Custom */
+.rhap_container {
   width: 240px;
-  height: 3px;
-  background-color: #ccc;
-  position: absolute;
-  top: 105px;
+  background-color: transparent;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
 }
-.music-wrapper2 .song span {
-  font-size: 14px;
+.rhap_progress-container {
+  margin: 0;
+  margin-bottom: 30px;
 }
-.music-wrapper2 .music-btn-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  cursor: pointer;
-}
-.music-wrapper2 .music-btn-group .btn-play {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+.rhap_progress-indicator {
+  width: 15px;
+  height: 15px;
   background-color: #a6b1e1;
-  margin-left: 2px;
-  border-radius: 50%;
-  color: #fff;
-  text-align: center;
+  top: -4px;
+}
+.rhap_progress-filled {
+  background-color: #a6b1e1;
+}
+.rhap_time {
+  font-size: 14px;
+  position: absolute;
+  top: 24px;
+}
+.rhap_total-time {
+  right: 0;
+}
+.rhap_repeat-button,
+.rhap_main-controls-button {
+  color: #999;
+}
+/* .rhap_play-pause-button {
+  color: #a6b1e1;
+} */
+.rhap_volume-bar-area {
+  display: none;
+  flex: 0;
 }

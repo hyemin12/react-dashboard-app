@@ -7,6 +7,13 @@
   height: 780px;
   overflow-y: auto;
 }
+.App .board.portfolio .board-wrapper::-webkit-scrollbar {
+  background-color: transparent;
+}
+.App .board.portfolio .board-wrapper::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
 
 .App .board.portfolio .board-wrapper .icon-home a {
   display: flex;

@@ -23,10 +23,11 @@ function PortfolioModal() {
               ></img>
             </div>
             <div className="column text-column">
-              <h1>{item.title}</h1>
+              <h1>#{item.title}</h1>
+              <h4>{item.subtitle}</h4>
               <p>{item.describtion}</p>
               <div className="skills-wrapper">
-                <h4>기능</h4>
+                <h4>About</h4>
                 {item.skills.map((skill) => {
                   return <p key={skill}>- {skill}</p>;
                 })}
@@ -43,6 +44,14 @@ function PortfolioModal() {
                 </a>
               </div>
             </div>
+            {item.img2 != null ? (
+              <div className="img2">
+                <img
+                  src={`../img/portfolio/${item.img2}.jpg`}
+                  alt={item.title}
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

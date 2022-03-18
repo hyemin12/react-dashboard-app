@@ -10,9 +10,11 @@
 }
 .todo-wrapper .todos-title-wrapper .todos-title h1 {
   font-size: 2.2em;
+  margin-bottom: 10px;
 }
 .todo-wrapper .todos-title-wrapper .todos-title h1 span {
   font-size: 0.9em;
+  /* color: #5973e3; */
 }
 
 .todo-wrapper .todos-title-wrapper .btn-todo-add {

@@ -18,7 +18,7 @@ function TodoTemplate() {
               {year}년 {month}월 {date}일
             </span>
           </h1>
-          <h4>가나다라마바사</h4>
+          <h4>오늘 할일을 메모하고, 실천하세요!</h4>
         </div>
         <button
           className="btn btn-todo-add"

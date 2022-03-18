@@ -1,4 +1,4 @@
-export const planDate = [
+export const planData = [
   {
     id: "0",
     date: "2022, 3, 20",
